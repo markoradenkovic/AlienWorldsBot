@@ -10,3 +10,12 @@ def get_new_browser_window(search_string, previous_windows):
             new_browser_window = window
     print("New Browser Window Found: " + str(new_browser_window))
     return new_browser_window
+
+
+def get_new_selenium_driver_window_guid(driver, previous_windows):
+    current_windows = driver.window_handles
+    for guid in current_windows:
+        if guid not in previous_windows:
+            return guid  # return the new_window_detected
+
+
