@@ -41,8 +41,9 @@ class ProgramInitializer:
         print("---\nBeginning creating chrome instances...\n")
         for account in self.accounts_list:
             driver = cd_handler.start_chrome(self.new_chrome_port)
-            chrome_window_id = self.get_new_chrome_window()
-            self.alien_bots_list.append(AlienBot(driver, chrome_window_id, account))
+            chrome_window = self.get_new_chrome_window()
+            # print(type(driver))
+            self.alien_bots_list.append(AlienBot(driver, driver.current_window_handle, chrome_window, account))
             self.new_chrome_port += 1  # Increment port to prepare creation of next Chrome Window
         print("\nSuccessfully created chrome_instances & created AlienBot data models")
 
