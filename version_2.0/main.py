@@ -1,5 +1,6 @@
 # IMPORTS
 from help_scripts import json_handler
+from help_scripts import chrome_instance_handler
 from bot import Bot
 
 # STEP 1: Read Account Data
@@ -19,6 +20,12 @@ print('\n___\nBOTS INITIALIZED WITH ACCOUNT DATA: ')
 print(*bots_list, sep='\n')
 
 # STEP 3: Setup Chrome Instances for Bots
+port = 36734
+chrome_instance_handler.remove_all_existing_instances()
+for bot in bots_list:
+    bot.setup_chrome_instance(port)
+    port += 1
+
 
 
 # STEP 4: Prepare Bots for Mining
