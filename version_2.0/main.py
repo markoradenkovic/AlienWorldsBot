@@ -26,10 +26,9 @@ for bot in bots_list:
     bot.setup_chrome_instance(port)
     port += 1
 
-
-
 # STEP 4: Prepare Bots for Mining
-
+for bot in bots_list:
+    bot.start_preparation_sequence()
 
 # STEP 5: Command Bots to Start Mining
 
