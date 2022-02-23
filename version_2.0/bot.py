@@ -9,6 +9,8 @@ class Bot:
         self.password = password
         self.driver = None
         self.parent_guid = None
+        self.previous_existing_guids = []  # Update this list before opening new windows
+        self.sign_in_window_guid = None
         self.pyget_chrome_window = None
 
     def __str__(self):
@@ -54,4 +56,11 @@ class Bot:
     def start_mining(self):
         # Call Decisions in Order and Log to Console
         pass
+
+    def update_previous_guids_list(self, updated_list):
+        self.previous_existing_guids = updated_list
+
+    def set_sign_in_window_guid(self, window):
+        self.sign_in_window_guid = window
+
 
