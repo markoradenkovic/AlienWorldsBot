@@ -65,15 +65,21 @@ def locate_sign_in_window_guid(bot):
 
 # SEQUENCE ORDER: 5
 def input_username_credential(bot):
+    time.sleep(1)
     web_element = web_element_handler.retrieve_element_by_xpath(bot.driver, '/html/body/div[1]/div/div/div/div['
                                                                             '5]/div/div/div/div[1]/div[1]/input')
+    print("VALUE OF USERNAME TEXTFIELD WEB_ELEMENT: ", web_element)
+    time.sleep(1)
     web_element.send_keys(bot.username)
 
 
 # SEQUENCE ORDER: 6
 def input_password_credential(bot):
+    time.sleep(1)
     web_element = web_element_handler.retrieve_element_by_xpath(bot.driver, '/html/body/div[1]/div/div/div/div['
                                                                             '5]/div/div/div/div[1]/div[2]/input')
+    print("VALUE OF PASSWORD TEXTFIELD WEB_ELEMENT: ", web_element)
+    time.sleep(1)
     web_element.send_keys(bot.password)
 
 
@@ -81,6 +87,8 @@ def input_password_credential(bot):
 def complete_login_process(bot):
     web_element = web_element_handler.retrieve_element_by_xpath(bot.driver, '/html/body/div[1]/div/div/div/div['
                                                                             '5]/div/div/div/div[4]/button')
+    print("VALUE OF LOGIN_BUTTON WEB_ELEMENT: ", web_element)
+
     while web_element.is_enabled() is False:
         time.sleep(0.5)
     web_element.click()

@@ -1,6 +1,7 @@
 # IMPORTS
 from help_scripts import chrome_instance_handler
 from bot_logic import preparation_sequence as p_sequence
+from bot_logic import mining_sequence as m_sequence
 
 
 class Bot:
@@ -54,13 +55,14 @@ class Bot:
         pass
 
     def start_mining(self):
-        # Call Decisions in Order and Log to Console
-        pass
+        print(f'\n___\nSTARTED MINING PROCESS FOR {self.username}\n')
+        m_sequence.locate_and_press_mine_button(self)
+        m_sequence.locate_and_press_claim_button(self)
+        m_sequence.retrieve_approve_transaction_window_and_approve(self)
+        print(f'\nSUCCESSFULLY MINED FOR: \'{self.username}\'')
 
     def update_previous_guids_list(self, updated_list):
         self.previous_existing_guids = updated_list
 
     def set_sign_in_window_guid(self, window):
         self.sign_in_window_guid = window
-
-

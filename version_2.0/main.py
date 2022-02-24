@@ -31,4 +31,5 @@ for bot in bots_list:
     bot.start_preparation_sequence()
 
 # STEP 5: Command Bots to Start Mining
-
+for bot in bots_list:
+    bot.start_mining()
