@@ -11,8 +11,8 @@ def retrieve_element_by_xpath(driver, xpath):
 
 
 def retrieve_element_by_id(driver, id):
-    return WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH, id)))
+    return WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.ID, id)))
 
 
 def retrieve_element_by_class_name(driver, class_name):
-    return WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH, class_name)))
+    return WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.CLASS_NAME, class_name)))
