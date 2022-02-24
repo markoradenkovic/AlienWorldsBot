@@ -1,4 +1,6 @@
 # IMPORTS
+import time
+
 from help_scripts import json_handler
 from help_scripts import chrome_instance_handler
 from bot import Bot
@@ -9,7 +11,6 @@ accounts_list = json_handler.read_json_file('data/configs/accounts.json')
 # https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
 print('___\nACCOUNTS RETRIEVED FROM CONFIGS: ')
 print(*accounts_list, sep='\n')
-
 
 # STEP 2: Initialize Bots with Account Data
 bots_list = []
@@ -28,7 +29,10 @@ for bot in bots_list:
 
 # STEP 4: Prepare Bots for Mining
 for bot in bots_list:
+    # TODO ERROR IN PREPARATION SEQUENCE WHEN USING MULTIPLE ACCOUNTS ?
+    # TODO SEEMS TO BE SOLVED ???
     bot.start_preparation_sequence()
+    time.sleep(2)  # Wait 2 sec before preparing next bot
 
 # STEP 5: Command Bots to Start Mining
 while True:
