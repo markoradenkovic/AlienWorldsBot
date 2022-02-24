@@ -1,19 +1,9 @@
 # IMPORTS
 import time
 import traceback
-
 import pyautogui
 from help_scripts import browser_window_handler as bwh
 from help_scripts import web_element_handler as weh
-
-
-# Call this function every 10 seconds for each bot
-# Try to locate the "Mine" button, if found then press it
-# If "Mine" Button not found, look for "Claim Mine" button, if button found click it
-# After "Claim Mine" button clicked, wait 3seconds, then check if a new "Approve Transaction" Window opened.
-# If "Approve Transaction" window opened, retrieve guid and wait 1sec, then look for "Approve" Button and click it.
-# If Approve Button successfully pressed, try to mine again. If neither [Mine], [Claim-Mine] button found, exit function
-# And let the thread go to other bots
 
 
 # START OF MINING SEQUENCE
