@@ -12,6 +12,7 @@ class Bot:
         self.parent_guid = None
         self.previous_existing_guids = []  # Update this list before opening new windows
         self.sign_in_window_guid = None
+        self.approve_transaction_window_guid = None
         self.pyget_chrome_window = None
 
     def __str__(self):
@@ -59,10 +60,13 @@ class Bot:
         m_sequence.locate_and_press_mine_button(self)
         m_sequence.locate_and_press_claim_button(self)
         m_sequence.retrieve_approve_transaction_window_and_approve(self)
-        print(f'\nSUCCESSFULLY MINED FOR: \'{self.username}\'')
+        print(f'\nMINING PROCESS FINISHED FOR: \'{self.username}\'')
 
     def update_previous_guids_list(self, updated_list):
         self.previous_existing_guids = updated_list
 
     def set_sign_in_window_guid(self, window):
         self.sign_in_window_guid = window
+
+    def set_approve_transaction_window_guid(self, window):
+        self.approve_transaction_window_guid = window
