@@ -5,7 +5,7 @@ import time
 import traceback
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from help_scripts import browser_window_handler as bwh
+from HelpScripts import BrowserWindowHandler as bwh
 
 path = str(pathlib.Path(__file__).parent.parent.resolve())
 path_to_chrome_instances = path + r'\instances_of_chrome'

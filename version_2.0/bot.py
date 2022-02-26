@@ -1,5 +1,5 @@
 # IMPORTS
-from help_scripts import chrome_instance_handler
+from HelpScripts import ChromeInstanceHandler
 from bot_logic import preparation_sequence as p_sequence
 from bot_logic import mining_sequence as m_sequence
 import time
@@ -22,7 +22,7 @@ class Bot:
     def setup_chrome_instance(self, port):
         print(f'\n___\nSETTING UP CHROME INSTANCE FOR {self.username}')
 
-        chrome_data_dict = chrome_instance_handler.start_chrome_and_retrieve_windows(port)
+        chrome_data_dict = ChromeInstanceHandler.start_chrome_and_retrieve_windows(port)
         self.driver = chrome_data_dict['driver']
         self.parent_guid = chrome_data_dict['driver_parent_guid']
         self.pyget_chrome_window = chrome_data_dict['pyget_chrome_window']

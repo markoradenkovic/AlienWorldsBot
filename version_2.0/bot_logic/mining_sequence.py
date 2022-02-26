@@ -2,8 +2,8 @@
 import time
 import traceback
 import pyautogui
-from help_scripts import browser_window_handler as bwh
-from help_scripts import web_element_handler as weh
+from HelpScripts import BrowserWindowHandler as bwh
+from HelpScripts import WebElementHandler as weh
 
 
 # START OF MINING SEQUENCE
