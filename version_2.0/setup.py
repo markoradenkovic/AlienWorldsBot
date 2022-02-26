@@ -16,6 +16,6 @@ import shutil
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import json
-
+import PIL
 
 setup(console=['main.py'])  # Calls setup function to indicate that we're dealing with a single console application
