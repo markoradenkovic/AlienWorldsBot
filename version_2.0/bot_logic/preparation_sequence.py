@@ -119,8 +119,10 @@ def complete_login_process(bot):
         web_element.click()
         print(f"COMPLETED complete_login_process for [{bot.username}]")
     except:
-        print(f"COMPLETED complete_login_process for [{bot.username}]")
+        print(f"FAILED complete_login_process for [{bot.username}]")
         print(traceback.print_exc())
-
+    finally:
+        input(f"Press ENTER to continue if login succeeded for [{bot.username}], Otherwise LOGIN MANUALLY, then press "
+              f"ENTER")
 
 
