@@ -1,0 +1,60 @@
+## STEP 1 - BOT ACCOUNTS CONFIGURATION
+
+* The bot acounts can be found under \dist\cli\alienworlds_program_data\configs\accounts.json
+* Open the accounts.json file in an optional text editing program.
+
+
+## STEP 2 - CONFIGURE ACCOUNTS FOR 1 ACCOUNT
+
+Follow the following format:
+
+[
+  {
+    "username": "youremail@gmail.com",
+    "password": "yourwaxpassword"
+  }
+]
+
+
+
+## STEP 3 - CONFIGURE ACCOUNTS FOR MULTIPLE ACCOUNTS
+
+Follow the following format:
+[
+  {
+    "username": "youremail1@gmail.com",
+    "password": "yourwaxpassword"
+  },
+  {
+    "username": "youremail2@gmail.com",
+    "password": "yourwaxpassword"
+  },
+  {
+    "username": "youremail3@gmail.com",
+    "password": "yourwaxpassword"
+  }
+]
+
+
+### STEP 4
+
+You might need to test the bot first. If the bot cant recognize the "Mine" & "Claim-Mine" Buttons -->
+
+1. You will have to take similar screenshots from your own pc.
+
+2. Then paste them and replace the old images inside "\dist\cli\alienworlds_program_data\images\"
+
+
+
+### STEP 5
+
+RUN THE PROGRAM
+
+* Find the cli.exe file inside the following path: "\dist\cli\cli.exe"
+
+* Run the application
+
+* Enjoy
+
+
+

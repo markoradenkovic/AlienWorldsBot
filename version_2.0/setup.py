@@ -10,7 +10,7 @@ from setuptools import setup
 HERE = pathlib.Path(__file__).resolve().parent
 
 # The text of the README file is used as a description
-README = (HERE / "README.md").read_text()
+README = (HERE / "COMPILING_NEW_DIST_INSTRUCTIONS.md").read_text()
 
 # This call to setup() does all the work
 setup(
@@ -28,7 +28,7 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
-    packages=["bot_logic", "alienworlds_program_data", "HelpScripts", "instances_of_chrome", "program_files"],
+    packages=["bot_logic", "alienworlds_program_data", "help_scripts", "instances_of_chrome", "program_files"],
     include_package_data=True,
     install_requires=["pygetwindow", "pyautogui", "selenium", "webdriver_manager", "pyscreeze", "opencv-python",
                       "Pillow", "PyMsgBox", "PyRect", "cachetools", "certifi", "charset-normalizer", "configparser",
