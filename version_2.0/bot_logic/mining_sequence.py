@@ -6,6 +6,18 @@ from HelpScripts import BrowserWindowHandler as bwh
 from HelpScripts import WebElementHandler as weh
 
 
+def close_all_windows_except_parent(bot):
+    print("BOT_PARENT_GUID: ", bot.parent_guid)
+    print("BOT_WINDOW_HANDLES: ", bot.driver.window_handles)
+    if len(bot.driver.window_handles) > 1:
+        current_windows = bot.driver.window_handles
+        for guid in current_windows:
+            if guid is not bot.parent_guid:
+                bot.driver.switchTo().window(guid)
+                bot.driver.close()
+                bot.driver.switchTo().window(bot.parent_guid)
+                print("Found old Transaction window and CLOSED...")
+
 # START OF MINING SEQUENCE
 
 # SEQUENCE ORDER 1
@@ -22,7 +34,8 @@ def locate_and_press_mine_button(bot):
         while mine_button_delay_counter < 7:
             time.sleep(1)
             mine_button_delay_counter += 1
-            mine_button_location = pyautogui.locateOnScreen('data/images/mine-button.png', region=region,
+            mine_button_location = pyautogui.locateOnScreen('alienworlds_program_data/images/mine-button.png',
+                                                            region=region,
                                                             confidence=0.8)
             if mine_button_location is not None:
                 break
@@ -55,8 +68,9 @@ def locate_and_press_claim_button(bot):
         while claim_mine_button_delay_counter < 7:
             time.sleep(1)
             claim_mine_button_delay_counter += 1
-            claim_mine_button_location = pyautogui.locateOnScreen('data/images/claim-mine-button.png', region=region,
-                                                                  confidence=0.8)
+            claim_mine_button_location = pyautogui.locateOnScreen(
+                'alienworlds_program_data/images/claim-mine-button.png', region=region,
+                confidence=0.8)
             if claim_mine_button_location is not None:
                 break
         time.sleep(0.5)

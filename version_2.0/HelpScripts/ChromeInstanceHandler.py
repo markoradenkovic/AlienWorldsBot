@@ -9,7 +9,7 @@ from HelpScripts import BrowserWindowHandler as bwh
 
 # WHEN BUILDING WITH PY2EXE, .parent.parent.parent
 # WHEN RUNNING IN PYCHARM .parent.parent
-path = str(pathlib.Path(__file__).parent.parent.parent.resolve())
+path = str(pathlib.Path(__file__).parent.parent.resolve())
 path_to_chrome_instances = path + r'\instances_of_chrome'
 
 

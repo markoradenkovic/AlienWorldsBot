@@ -1,21 +1,37 @@
-from distutils.core import setup  # Need this to handle modules
-import py2exe
-import traceback
-import time
-import sys
-import HelpScripts
-import bot_logic
-import instances_of_chrome
-import data
-import bot
-import pathlib
-import pygetwindow
-import pyautogui
-import os
-import shutil
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-import json
-import PIL
+"""Setup script for realpython-reader"""
 
-setup(console=['main.py'])  # Calls setup function to indicate that we're dealing with a single console application
+# Standard library imports
+import pathlib
+
+# Third party imports
+from setuptools import setup
+
+# The directory containing this file
+HERE = pathlib.Path(__file__).resolve().parent
+
+# The text of the README file is used as a description
+README = (HERE / "README.md").read_text()
+
+# This call to setup() does all the work
+setup(
+    name="alien-worlds-bot",
+    version="1.0.0",
+    description="Play alien-worlds",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    url="https://github.com/",
+    author="Alien World",
+    author_email="info@alienworlds.io",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+    ],
+    packages=["bot_logic", "alienworlds_program_data", "HelpScripts", "instances_of_chrome", "program_files"],
+    include_package_data=True,
+    install_requires=["pygetwindow", "pyautogui", "selenium", "webdriver_manager", "pyscreeze", "opencv-python",
+                      "Pillow", "PyMsgBox", "PyRect", "cachetools", "certifi", "charset-normalizer", "configparser",
+                      "idna", "numpy", "outcome", "pefile", "pycparser", "setuptools", "json"],
+    entry_points={"console_scripts": ["alien-worlds-bot=program_files.__main__:main"]},
+)

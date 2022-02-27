@@ -49,6 +49,7 @@ class Bot:
 
     def start_mining(self):
         print(f'\n___\nSTARTED MINING PROCESS FOR {self.username}\n')
+        m_sequence.close_all_windows_except_parent(self)
         m_sequence.locate_and_press_mine_button(self)
         m_sequence.locate_and_press_claim_button(self)
         m_sequence.retrieve_approve_transaction_window_and_approve(self)
